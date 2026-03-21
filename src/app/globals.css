@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@import "tailwindcss" prefix(tw);
+@import 'tailwind-scrollbar-hide/v4';
+
+
+@theme {
+  --color-rk-primary: #964A26;
+}
+
+@font-face {
+  font-family: "Alga VF";
+  src: url("/fonts/alga-font-family/Alga-Medium.ttf");
+  font-display: swap;
+}
+
+.dm-sans {
+  font-family: "DM Sans", sans-serif;
+}
+
+.alga-font {
+  font-family: "Alga VF";
+}
+
+@font-face {
+  font-family: "Brittany Signature";
+  src: url(/fonts/BrittanySignature.ttf);
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Optima LT Regular";
+  src: url("/fonts/Optima LT Regular.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pelita Grande Std";
+  src: url("/fonts/Pelita Grande Std-Regular.otf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Copperplate";
+  src: url("/fonts/Copperplate Regular.ttf");
+  font-display: swap;
+}
+
+.pelita-grande-font {
+  font-family: "Pelita Grande Std";
+}
+
+.optima-font {
+  font-family: "Optima LT Regular";
+}
+
+.copperplate-font {
+  font-family: "Copperplate";
+}
+
+.brittany-font {
+  font-family: "Brittany Signature";
+}
+
+.container {
+  margin: auto;
+}
+
+.button-dark {
+  @apply tw:bg-black tw:text-white tw:px-6 tw:py-2 tw:flex tw:items-center tw:justify-center tw:w-max;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+}
+
+body {
+  background: #f8f8fb !important;
+  font-family: var(--font-inter);
+  font-display: swap;
+  max-width: 1640px;
+  margin: auto !important;
+  overflow-x: hidden;
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.navbar>.container {
+  flex-wrap: nowrap !important;
+}
+
+.section-padding {
+  padding: 40px 0;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+@media (min-width: 1020px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: calc(100% - 100px);
+  }
+}
+
+main {
+  min-height: 100vh;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  border: 1px solid #e8e8e8;
+}
+
+picture img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.bg-red {
+  background: #9f212c !important;
+}
+
+.text-red {
+  color: #a0222c !important;
+}
+
+.text-black {
+  color: #000 !important;
+}
+
+.text-gold {
+  color: #c0832b !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.z-index-9999 {
+  z-index: 9999;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.contact-required {
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+/* .loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #A0222C;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  }  */
+
+.splide__track--nav>.splide__list>.splide__slide.is-active {
+  border: none !important;
+}
+
+/* .ball{
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background:#67C7FF;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+  } */
+
+.getEstimateModal .modal-content {
+  border-radius: 30px;
+  background: #f3f3f3;
+}
+
+.getEstimateModal .modal-content label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6d6d6d;
+}
+
+.getEstimateModal input,
+.getEstimateModal select {
+  border-radius: 4px;
+  border: 1.544px solid #cecece;
+  background-color: #f3f3f3 !important;
+  color: #6d6d6d;
+  height: 36px;
+}
+
+.getEstimateModal input:focus,
+.getEstimateModal select:focus {
+  border-color: #9f212c;
+  box-shadow: none;
+  background-color: #f3f3f3 !important;
+}
+
+.getEstimateModal .submit-button {
+  border-radius: 8px;
+  height: 46px;
+  background: linear-gradient(90deg, #a0222c 0%, #c79144 100%);
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+  color: #fff !important;
+}
+
+.filter-modal .modal-content {
+  min-height: 250px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.filter-modal .nav.nav-pills {
+  border-radius: 10px 0px 0px 10px;
+  background: #eaeaea;
+}
+
+
+
+.filter-modal .nav-pills .nav-link {
+  color: #2D2D2D;
+  font-size: 14px;
+  padding: 0;
+}
+
+.filter-modal .nav-pills .nav-link.active {
+  color: #a0222c !important;
+  background: #eaeaea;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.filter-modal label {
+  width: 100%;
+  cursor: pointer;
+  color: #2D2D2D;
+  font-size: 12px;
+
+}
+
+@media (min-width:768px) {
+  .filter-modal label {
+    width: 100%;
+    cursor: pointer;
+    color: #2D2D2D;
+    font-size: 14px;
+
+  }
+}
+
+.filter-modal input[type="radio"] {
+  accent-color: #a0222c;
+}
+
+.filter-modal label span {
+  color: #A5A5A5;
+
+}
+
+.filter-modal .tab-content ul li {
+  border-bottom: 1px solid #D5D5D5;
+  padding-bottom: 10px;
+}
+
+.home header {
+  background-color: #F2EDE4 !important;
+}
+
+.HomeNewSection3 .swiper-button-prev,
+.HomeNewSection3 .swiper-button-next {
+  color: black;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+
+  .HomeNewSection3 .swiper-button-prev,
+  .HomeNewSection3 .swiper-button-next {
+    display: block;
+  }
+}
+
+.HomeNewSection3 .swiper-button-prev::after,
+.HomeNewSection3 .swiper-button-next::after {
+  font-size: 24px !important;
+}
+
+.dashboard .metal-rates-bar {
+  display: none;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+/* Force override for dashboard links */
+.dashboard a {
+  text-decoration: none !important;
+  color: inherit !important;
+}

@@ -1,0 +1,202 @@
+
+.tvam {
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: var(--font-inter);
+    font-size: 14px;
+  }
+  @media (min-width: 768px) {
+    .tvam {
+      font-size: 16px;
+    }
+  }
+   .font-secondary {
+    font-family: var(--font-great-vibes) !important;
+  }
+  
+  .tvam a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+ .tvam .primary-text {
+    color: #7d0849;
+  }
+  .tvam .main-image-banner picture img{
+    width: 100%;
+    height: auto;
+  }
+  /* video section */
+  
+  .tvam .video-section {
+    background: #f5f1e6 url("/tvam/video_bg_pattern.png");
+    border-top: solid 1px #efe5c8;
+    border-bottom: solid 1px #efe5c8;
+  }
+  .tvam .video-section_video-wrapper {
+    max-width: 786px;
+    aspect-ratio: 16/9;
+  }
+  
+  /* bride grid */
+  .tvam .bride-grid-section {
+    background: #f5f1e6 url("/tvam/bg_pattern_new.png");
+    border-top: solid 1px #efe5c8;
+    border-bottom: solid 1px #efe5c8;
+  }
+  
+  
+  .tvam .bride-grid-section_overlay-top{
+    left: 50%;
+    transform: translate(-50%,0);
+  }
+  .tvam .bride-grid-section_content {
+    max-width: 680px;
+    color: #63300f;
+  }
+  .tvam  .max-w-500{
+    max-width: 500px;
+  }
+  .tvam .bride-grid-section_items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .bride-grid-section_items img{
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    .tvam   .bride-grid-section_items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .tvam   .bride-grid-section_items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+  
+  .tvam .bride-grid-section_items .h2 {
+    color: #63300f;
+  }
+  
+  .tvam .sticky-section {
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0px 0px 23px 0px #e3e3e3;
+  }
+  
+  .tvam .sticky-section-btn,
+  .tvam .sticky-section-btn:hover {
+    border-radius: 30px;
+    color: #fff !important;
+    background: #851753 !important;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: transparent;
+    border: 2px solid transparent;
+    width: fit-content;
+    margin: auto;
+  }
+  
+  .tvam  .flip-book-section {
+    background: #f5f1e6 url("/tvam/video_bg_pattern.png");
+  }
+  /* .flip-book-section_wrapper{
+    background-color: #DDAC88;
+  } */
+  .tvam .flip-book-section_wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .tvam .slick-prev:before,
+  .tvam .slick-next:before {
+    color: #851753 !important;
+  }
+  
+  .tvam .slider-section .carousel-item img {
+    border-radius: 20px;
+  }
+  
+  .tvam .slider-section .slick-slide {
+    padding: 0px 5px;
+  }
+  
+  .tvam .slider-section_content {
+    max-width: 750px;
+  }
+  
+  .tvam .slider-section_item-bg {
+    border-radius: 40px;
+    background: #e5eff3;
+    padding: 0 50px;
+    margin: 4rem 0;
+  }
+  
+  @media (min-width: 768px) {
+    .tvam .slider-section-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+  }
+  .tvam .slider-section-grid-item-img1 {
+    position: relative;
+    bottom: 50px;
+    border-radius: 20px;
+  }
+  
+  .tvam .slider-section-grid-item-img2 {
+    position: relative;
+    top: 50px;
+    border-radius: 20px;
+  }
+  
+  /* .tvam  body {
+    padding-bottom: 160px;
+  } */
+  
+  .tvam .slick-cards-section {
+    background: #f5f1e6 url("/tvam/bg_pattern_new.png");
+  }
+  
+  .tvam .slick-cards-section_title {
+    max-width: 650px;
+    margin: auto;
+  
+  }
+  .tvam  .slick-cards-section .slick-slide {
+    padding: 0px 5px;
+  }
+  .tvam  .slick-cards-section .slick-slide img {
+    border-radius: 20px;
+  }
+  
+  .video-section_video-wrapper .yt-lite{
+    border-radius: 20px;
+  }
+  .tvam .flip-book-section_wrapper{
+    background-color: #e3d0b5;
+    color: #785e3a;
+    border: 2px solid #998466;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .tvam .page.--left{
+      border-right: 0;
+      box-shadow: inset -7px 0 30px -7px rgba(0,0,0,.4);
+  }
+  
+  .tvam .page.--right { border-left: 0; box-shadow: inset 7px 0 30px -7px rgba(0,0,0,.4); }

@@ -1,0 +1,265 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@400;&display=swap');
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url('/fonts/Helvetica-Neue/HelveticaNeueLight.otf') format('opentype');
+}
+.diamond-page{
+    background: linear-gradient(77deg, #0B1827 3.01%, #20528B 56.11%, #0B1827 114.8%);
+}
+.diamond-page header{
+    width: 100%;
+
+}
+
+@media (min-width: 992px) {
+    .diamond-page .fixed {
+        position: fixed;
+    }
+    .diamond-page .navbar {
+        transition: all .2s;
+        background-color: #fff;
+        box-shadow: none;
+    }
+    
+    .diamond-page .fixed .navbar {
+        background-color: transparent;
+    }
+    
+    
+    .diamond-page header.fixed .navbar .dropdown-toggle::after {
+        filter: invert(1);
+    }
+    .diamond-page header.fixed nav ul li.nav-item a.nav-link{
+        color: #fff !important;
+    }
+    
+}
+
+.DiamondSection1_modal-button{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 3%;
+    bottom: 0;
+    z-index: 10;
+}
+.DiamondSection1_modal-button button, .modal-submit-btn{
+    border-radius: 56px;
+    border: 2px solid #66C5FD !important;
+    background: linear-gradient(90deg, #4F99C4 0%, #67C7FF 47.5%, #3E7799 100%) !important;
+    padding: 8px 20px;
+    font-size: 14px !important;
+    font-family: "Helvetica Neue";
+    font-weight: 600;
+    color: #0A1726 !important;
+    box-shadow: none;
+}
+.DiamondSection1_modal .modal-close-btn{
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0;
+    outline: none;
+}
+.DiamondSection1_modal .modal-content {
+    border-radius: 17.529px;
+    background-image: url('/diamond/modal/bg.webp');
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjust this if needed */
+}
+
+.modal-error-message{
+    font-weight: 500;
+    font-size: 14px;
+    color:#fff;
+}
+
+@media (min-width:768px) {
+    .DiamondSection1_modal .modal-grid-items{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+.DiamondSection1_modal .modal-grid-items .modal-item-input{
+    border-radius: 4.382px;
+    border: 1.096px solid #67C7FF;
+    background: transparent;
+    height: 40px;
+    width: 100%;
+    color: #fff;
+    font-family: "Helvetica Neue";
+    padding: 10px;
+    outline: none;
+}
+.DiamondSection1_modal .modal-grid-items .modal-item-input::placeholder{
+    color: #4275B1;
+    font-family: "Helvetica Neue";
+}
+.diamond-page footer{
+    background: #123256;
+    font-family: "Helvetica Neue";
+
+}
+
+.diamond-page footer .footer-items-title{
+    font-family: Playfair Display;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+
+}
+
+.diamond-page footer .nav-link{
+    color: #FFF;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.DiamondSection3{
+    font-family: "Playfair Display";
+}
+.DiamondSection3__title{
+    color: #67C7FF;
+    font-family: "Helvetica Neue";
+}
+.DiamondSection4,.DiamondSection2{
+    background: #123256;
+}
+.DiamondSection4__title{
+    color: #67C7FF;
+    font-family: "Helvetica Neue";
+}
+.DiamondSection4__caption{
+    font-family: "Playfair Display";
+
+}
+
+
+
+.DiamondSection4 .swiper-slide{
+    height: 100%;
+}
+.DiamondSection4 .swiper-slide img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+
+}
+
+
+.DiamondSection4 .swiper-slide .center-slide-item{
+    height: 100%;
+    border-radius: 20px;
+}
+.DiamondSection4 .left-arrow{
+    position: absolute;
+    top: 48%;
+    left: -16px;
+    z-index: 1;
+}
+.DiamondSection4 .right-arrow{
+    position: absolute;
+    top: 48%;
+    right: -16px;
+    z-index: 1;
+}
+.DiamondSection4 .swiper-wrapper,.DiamondSection4 .swiper{
+    height: 100%;
+}
+
+
+
+
+.diamond-page_section-title__line-below::after{
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 2px;
+    background-color: #FFF;
+    border-radius: 10px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 10px);
+}
+
+
+
+.ScrollableSections{
+    background: #123256;
+}
+
+
+.ScrollableSections__title{
+    font-family: "Playfair Display";
+    font-weight: 700;
+}
+
+.ScrollableSections h2{
+    font-family: "Playfair Display";
+    font-weight: 700;
+}
+.ScrollableSections h4{
+    font-family: "Helvetica Neue";
+    font-weight: 400;
+}
+.ScrollableSections i{
+    font-family: "Playfair Display";
+    font-weight: 400;
+}
+
+
+.ScrollableSections .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns: text in one, video in the other */
+    gap: 20px;
+    height: 100%; /* Full height for the video column */
+    position: relative;
+  }
+  
+  .ScrollableSections .block {
+    height: 100vh; /* Make sure the text blocks are full height */
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    color: #fff;
+    max-width: 600px;
+  }
+  
+  .ScrollableSections  .video-container {
+    position: sticky;
+    top: 40px;
+    height: 100vh; /* Make sure video container covers full height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ScrollableSections video {
+    max-width: 550px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    max-height: 85vh;
+    object-fit: cover;
+}
+  
+
+
+.DiamondSection5__main-title{
+    font-family: "Helvetica Neue";
+}
+
+.DiamondSection5__sub-title{
+    font-family: "Playfair Display";
+}
+
+.DiamondSection1_modal.show{
+    z-index: 9999;
+    backdrop-filter: brightness(0.5);
+}

@@ -1,0 +1,23 @@
+.HomeNewSection4 .swiper-slide {
+    height: auto;
+}
+
+.HomeNewSection3 .swiper-pagination-fraction,
+.HomeNewSection3 .swiper-pagination-custom,
+.HomeNewSection3 .swiper-horizontal>.swiper-pagination-bullets,
+.HomeNewSection3 .swiper-pagination-bullets.swiper-pagination-horizontal {
+    position: relative !important;
+    margin-top: 25px !important;
+}
+
+.HomeNewSection3 .swiper-pagination-bullet-active{
+    background: #964A26 !important;
+}
+
+.HomeNewSection3 .swiper-pagination-bullet {
+    height: 5px;
+    width: 20px;
+    border-radius: 2px;
+}
+
+

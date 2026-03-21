@@ -1,0 +1,220 @@
+
+.akshatritiya-page{
+    font-family: 'Optima LT Regular', sans-serif;
+}
+.akshatritiyasection2 img{
+    border-radius: 16.258px;
+}
+
+@media (max-width:650px) {
+    .AkshayaTritiyaSection1-mob-video{
+        display: block;
+    }
+    .AkshayaTritiyaSection1-large-video{
+        display: none;
+    }
+}
+@media (min-width:650px) {
+    .AkshayaTritiyaSection1-mob-video{
+        display: none;
+    }
+    .AkshayaTritiyaSection1-large-video{
+        display: block;
+    }
+}
+.AkshayaTritiyaSection1 video{
+    width: 100%;
+    height: auto;
+}
+.akshatritiyasection2 video{
+    border-radius: 16.258px;
+    max-width: 100%;
+    /* width: 100%; */
+}
+
+.akshatritiyasection2__img-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.akshatritiyasection2__btn{
+    border-radius: 6px;
+    border: 1px solid #A0222C;
+    color: #A0222C;
+}
+
+
+.AkshayaTritiyaSection5{
+    background: #fff;
+}
+
+.AkshayaTritiyaSection4{
+    background-color: #9F212C;
+ 
+}
+
+.AkshayaTritiyaSection4 li::marker{
+    color: #EEB64F;
+}
+.AkshayaTritiyaSection4 li{
+    margin-bottom: 5px;
+}
+
+.AkshayaTritiyaSection4__prebook-text{
+    border-radius: 5.237px;
+    border: 0.873px solid #E8E8E8;
+    width: fit-content;
+    margin: auto;
+    color: #2D2D2D;
+    padding: 5px 20px;
+}
+
+.AkshayaTritiyaSection4__prebook-btn{
+    border-radius: 5.237px;
+    background: linear-gradient(89deg, #9F212C 0.81%, #E0A73C 122.45%) !important;
+    color: #FFF !important;
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    width: 170px;
+    height: 40px;
+}
+
+.AkshayaTritiyaSection4__form{
+    border-radius: 20.95px;
+    background: #FFF;
+    box-shadow: 0px 0px 66.526px -20.908px rgba(0, 0, 0, 0.32);
+    max-width: 500px;
+    margin: auto;
+}
+
+.AkshayaTritiyaSection4__form label{
+    color: #2D2D2D;
+}
+
+.AkshayaTritiyaSection4__form label span{
+    color: #C0832B;
+}
+/* .AkshayaTritiyaSection3 img{
+    aspect-ratio: 1;
+    object-fit: cover;
+} */
+.AkshayaTritiyaSection3__thumb-slider img{
+    border-radius: 12px;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.akshatritiya-page .splide__track--nav>.splide__list>.splide__slide.is-active{
+    border: none;
+    box-shadow: none;
+}
+/* 
+.AkshayaTritiyaSection3_main-img-slider{
+
+} */
+
+.AkshayaTritiyaSection3_main-img-slider__text{
+    position: absolute;
+    color: #FFF;
+    left: 20px;
+    bottom: 20px;
+}
+
+.AkshayaTritiyaSection3 .splide__arrow{
+ background-color: #E0A73C !important; 
+ opacity: 1;  
+ width: 42px;
+ height: 42px;
+}
+.AkshayaTritiyaSection3 .splide__arrow--prev
+{
+left: -21px !important;
+}
+.AkshayaTritiyaSection3 .splide__arrow--next
+{
+    right: -21px !important;
+}
+
+
+.AkshayaTritiyaSection5 .nav-tabs{
+    /* border: none; */
+    border-bottom: 2px solid #E4E4E4 !important;
+    width: fit-content;
+    margin: auto;
+}
+.AkshayaTritiyaSection5 .nav-tabs .nav-link{
+    border: none !important;
+    color: #282828;
+    font-weight: 600 !important;
+    font-size: 18px;
+}
+.AkshayaTritiyaSection5 .nav-tabs .nav-link.active{
+    color: #9F212C !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #C0832B !important;
+    box-shadow: none !important;
+
+}
+
+.AkshayaTritiyaSection5 .buy-now-btn{
+    border-radius: 4px;
+border: 1px solid #C0832B;
+/* width: 133px; */
+/* height: 37px; */
+color: #2D2D2D;
+font-weight: 600;
+text-transform: uppercase;
+font-size: 14px;
+}
+/* 
+.AkshayaTritiyaSection5 .product-cards{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-content: center;
+}
+
+@media (min-width:360px) {
+    .AkshayaTritiyaSection5 .product-cards{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (min-width:992px) {
+    .AkshayaTritiyaSection5 .product-cards{
+        grid-template-columns: repeat(4,1fr);
+
+    }
+} */
+
+.AkshayaTritiyaSection5 .product-card{
+ border: none !important;
+ margin: auto;
+ width: 100%;
+ /* max-width: 240px; */
+ margin: auto;
+}
+
+
+.AkshayaTritiyaSection5  .card-img-top {
+    border: 1px solid #DFDFDF;
+    border-radius: 12px;
+    height: 244px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.AkshayaTritiyaSection4 .current-gold-rate{
+    border-radius: 3.653px;
+    background: #C0832B;
+    width: fit-content;
+    margin: auto;
+    color: #fff !important;
+    padding: 5px 20px;
+}

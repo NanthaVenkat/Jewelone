@@ -1,0 +1,109 @@
+.home-section6 {
+  background: #fafafa;
+}
+
+.home-section6 svg {
+  width: 27.194px;
+  height: 27.17px;
+  flex-shrink: 0;
+}
+.home-section6_title {
+  color: #a0222c;
+  font-family: var(--font-inter);
+  font-size: 24.049px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 108.5%; /* 26.093px */
+  text-transform: uppercase;
+}
+.home-section6_text {
+  color: #222;
+  text-align: center;
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132.023%; /* 18.483px */
+  text-transform: capitalize;
+}
+.home-section6_text b {
+  color: #222;
+  text-align: center;
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 132.023%; /* 18.483px */
+  text-transform: uppercase;
+}
+
+.instagram-grid-section_text {
+  color: #222;
+  text-align: center;
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132.023%; /* 18.483px */
+  text-transform: capitalize;
+}
+.instagram-grid-section_text b {
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .home-section6 svg {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+  .home-section6 .splide__slide {
+    width: 316px;
+  }
+  .home-section6_title {
+    color: #a0222c;
+    font-family: var(--font-inter);
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 108.5%; /* 36.89px */
+    text-transform: uppercase;
+  }
+  .home-section6_text {
+    color: #222;
+    text-align: center;
+    font-family: var(--font-inter);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+  .home-section6_text b {
+    color: #222;
+    text-align: center;
+    font-family: var(--font-inter);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .instagram-grid-section_text {
+    color: #222;
+    text-align: center;
+    font-family: var(--font-inter);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+}
+
+.instagram-grid-items .splide__slide img {
+  height: auto;
+  aspect-ratio: 1;
+  width: 100%;
+}

@@ -1,0 +1,538 @@
+.florencia-page {
+    --swiper-theme-color: #fff !important;
+    --swiper-navigation-color: #fff !important;
+    --swiper-pagination-bullet-inactive-color: #fff !important;
+    --swiper-pagination-color: #fff !important;
+    --swiper-navigation-size: 12px !important;
+  }
+  
+  .florencia-page {
+    font-size: 14px;
+    font-family: Metropolis;
+    color: #5e5d7f;
+  
+    /* cursor: url("/florencia/icons/starter-diamond-cursor.png"), default !important; */
+  
+  }
+
+  
+  /* .florencia-page a, .florencia-page button{
+    cursor: url("/florencia/icons/starter-diamond-pointer.png"), pointer !important;
+  } */
+
+  @font-face {
+    font-family: Metropolis;
+    src: url(/fonts/metropolis/Metropolis-Regular.otf);
+    font-weight: 400;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Metropolis;
+    src: url(/fonts/metropolis/Metropolis-Medium.otf);
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: Metropolis;
+    src: url(/fonts/metropolis/Metropolis-SemiBold.otf);
+    font-weight: 600;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: Metropolis;
+    src: url(/fonts/metropolis/Metropolis-Bold.otf);
+    font-weight: bold;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Gotham;
+    src: url(/fonts/Gotham-Font/GothamMedium.ttf);
+    font-display: swap;
+  }
+  
+  /* @media (min-width: 576px) {
+    .container {
+      max-width: calc(100% - 8%);
+    }
+  } */
+  
+  .main-color {
+    color: #7e4299;
+  }
+  .secondary-color {
+    color: #473677;
+  }
+  .main-font {
+    font-family: Gotham;
+  }
+  .color-dark {
+    color: #2d2d2d;
+  }
+
+  .custom-outline-btn {
+    color: #473677 !important;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 1px solid #7e4299 !important;
+    background: #fff !important;
+  }
+
+  /* announcement-bar */
+  .announcement-bar {
+    background: rgb(210, 153, 194);
+    background: linear-gradient(
+      90deg,
+      rgba(210, 153, 194, 1) 0%,
+      rgba(254, 249, 215, 1) 100%
+    );
+    color: #473677;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .announcement-bar__text {
+    font-size: 12px;
+  }
+  @media (min-width: 768px) {
+    .announcement-bar__text {
+      font-size: 14px;
+    }
+  }
+
+
+  
+   .florencia-page .main-slider-section .swiper-pagination {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
+  
+  .florencia-page .main-slider-section .swiper-pagination-bullet {
+    /* transform:rotate(-90deg) !important; */
+    height: 10px;
+    width: 10px;
+    border-radius: 0px;
+    background-color: #7e4299;
+    transform: rotate(45deg);
+  }
+  .florencia-page .main-slider-section .swiper-pagination {
+    margin: 10px;
+  }
+  .florencia-page .main-slider-section picture img {
+    height: auto;
+    width: 100%;
+    /* min-height: 400px;
+     object-fit: cover;
+     object-position: left; */
+  }
+  
+  .florencia-page .home-section3 {
+    background-color: #faf3f1;
+  }
+  .florencia-page .home-section3 img {
+    max-width: 50px;
+    aspect-ratio: 1;
+  }
+  .florencia-page .highlight-text {
+    border-radius: 4px;
+    background: linear-gradient(90deg, #b098bb -6.96%, #eb9363 109.15%);
+    padding: 5px;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .florencia-page .home-section3 h3 {
+    line-height: 160%;
+  }
+  /* .florencia-page .home-section3-logo-item--img_wrapper {
+    height: 60px;
+    width: 60px;
+  } */
+  .florencia-page .home-section3-logo-item {
+    border-radius: 20px;
+    background: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100%;
+    font-size: 14px !important;
+  }
+  /* .florencia-page .home-section3-logo-items{
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+      gap: 20px;
+  }
+   .florencia-page .home-section3__grid-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  } */
+  /* .florencia-page .home-section3-slider .swiper-wrapper{
+    justify-content: center;
+  } */
+  .florencia-page .home-section3-slider .swiper-slide {
+    height: unset;
+    width: 180px;
+  }
+  
+  @media (min-width: 768px) {
+    .florencia-page   .home-section3__grid-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+  }
+
+  
+  .florencia-page .book-appointment-section__overlay-img {
+    min-height: 800px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .florencia-page .book-appointment-section__form {
+    max-width: 500px;
+    flex-shrink: 0;
+    width: 100%;
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* right: 0; */
+  }
+  
+  @media (min-width: 768px) {
+    .florencia-page .book-appointment-section__form {
+      left: unset;
+      right: 15px;
+      transform: translate(0px, -50%);
+    }
+  }
+  .florencia-page .book-appointment-section__form .card {
+    border-radius: 37.017px;
+    background: #fff;
+    box-shadow: 0px 0px 76.212px -23.952px rgba(0, 0, 0, 0.32);
+  }
+  .florencia-page .book-appointment-section__form .btn {
+    width: 100%;
+    border-radius: 7.042px;
+    background: #ad5389;
+    color: #fff;
+    text-align: center;
+    font-family: Metropolis;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    height: 50px;
+  }
+  .florencia-page .book-appointment-section__form input {
+    box-shadow: none !important;
+  }
+  .florencia-page .book-appointment-section__form--title {
+    color: #ad5389;
+  }
+  
+  .florencia-page .home-reviews-slider-section {
+    background-color: #faf3f1;
+  }
+  .florencia-page .home-reviews-slider-section .card {
+    border-radius: 18px;
+    background: #fff;
+    border: none;
+  }
+  
+  .florencia-page .home-reviews-slider-section .card img {
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+  
+  .florencia-page .home-reviews-slider-section {
+    --swiper-navigation-size: 12px;
+  }
+  .florencia-page .custom-buttons {
+    position: relative;
+    padding-top: 40px;
+    font-weight: 600;
+  }
+  
+  .florencia-page .swiper-button-next,
+  .florencia-page .swiper-button-prev {
+    background-color: #723d8d;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+  }
+  /* .florencia-page .custom-buttons .swiper-button-next{
+  right: 30px;
+  }
+  .florencia-page .custom-buttons .swiper-button-prev{
+  right: 0;
+  } */
+  
+  .florencia-page .home-section5__text {
+    text-align: center;
+    font-family: "Libre Baskerville";
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .italic-font{
+    font-family: "Libre Baskerville";
+    font-style: italic;
+
+  }
+  
+  .florencia-page .home-section5-slider img {
+    object-fit: cover;
+    /* aspect-ratio: 1; */
+    border-radius: 10px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+  
+  @media (min-width: 768px) {
+    .florencia-page  .book-appointment-section__overlay-img {
+      border-radius: 20px;
+    }
+  }
+  
+  .florencia-page .home-section2-title_wrapper p {
+    padding: 0.5rem;
+    overflow: hidden;
+  }
+  .florencia-page .home-section2-title_wrapper p span.typed-text {
+    font-weight: normal;
+  }
+  .florencia-page .home-section2-title_wrapper p span.cursor {
+    display: inline-block;
+    background-color: #ccc;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+  }
+  .florencia-page .home-section2-title_wrapper p span.cursor.typing {
+    animation: none;
+  }
+  @keyframes blink {
+    0% {
+      background-color: #ccc;
+    }
+    49% {
+      background-color: #ccc;
+    }
+    50% {
+      background-color: transparent;
+    }
+    99% {
+      background-color: transparent;
+    }
+    100% {
+      background-color: #ccc;
+    }
+  }
+  
+  /* instgram-grid */
+  
+  
+  
+  
+  .florencia-page .instgram-grid_item img:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease, box-shadow 0.5s ease;
+  }
+  .florencia-page .instgram-grid_item {
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .florencia-page  .instgram-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .florencia-page .instgram-grid_item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  @media (max-width:768px) {
+    /*  .florencia-page.instgram-grid_item img {
+     max-height: 152px;
+    } */
+    .florencia-page  .instgram-grid_item:nth-child(4), .instgram-grid_item:nth-child(5), .instgram-grid_item:nth-child(6) {
+      display: none;
+    }
+  }
+  
+  @media (min-width:768px) {
+  
+    .florencia-page   .instgram-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 2fr 2fr;
+      gap: 16px;
+    }
+  
+    .florencia-page .instgram-grid_item:nth-child(1) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+    .florencia-page .instgram-grid_item:nth-child(2) {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+    .florencia-page  .instgram-grid_item:nth-child(3) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: span 2;
+    }
+    .florencia-page  .instgram-grid_item:nth-child(4) {
+      grid-column-start: 4;
+      grid-column-end: 5;
+    }
+    
+    .florencia-page  .instgram-grid_item:nth-child(5) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    
+    .florencia-page .instgram-grid_item:nth-child(6) {
+      grid-column-start: 4;
+      grid-column-end: 5;
+    }
+  }
+
+
+
+
+
+
+
+  
+.FlorenciaSection3New{
+ background-image: url("/florencia/bg.png");
+}
+.FlorenciaSection3New .splide__slide img,.FlorenciaSection3New_main-img-slider .splide__slide img{
+  object-position: top !important;
+}
+
+  /* .FlorenciaSection3New img{
+    aspect-ratio: 1;
+    object-fit: cover;
+} */
+.FlorenciaSection3New__thumb-slider img{
+  border-radius: 12px;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.akshatritiya-page .splide__track--nav>.splide__list>.splide__slide.is-active{
+  border: none;
+  box-shadow: none;
+}
+/* 
+.FlorenciaSection3New_main-img-slider{
+
+} */
+
+.FlorenciaSection3New_main-img-slider__text{
+  position: absolute;
+  color: #FFF;
+  left: 20px;
+  bottom: 20px;
+}
+
+.FlorenciaSection3New .splide__arrow{
+background-color: #E0A73C !important; 
+opacity: 1;  
+width: 42px;
+height: 42px;
+}
+.FlorenciaSection3New .splide__arrow--prev
+{
+left: -21px !important;
+}
+.FlorenciaSection3New .splide__arrow--next
+{
+  right: -21px !important;
+}
+
+
+
+
+
+.florencia-footer {
+  /* background: linear-gradient(0deg, rgba(210,153,194,1) 0%, rgba(254,249,215,1) 100%); */
+  background-color: #faf3f1;
+}
+.florencia-footer img {
+  /* border-radius: 10px; */
+  max-width: 200px;
+}
+.florencia-footer .nav-link {
+  color: #3c1053 !important;
+  margin: 10px 0px;
+  font-size: 14px !important;
+}
+
+.florencia-footer .footer-links {
+  display: grid;
+  gap: 20px;
+  /* grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); */
+  grid-template-columns: auto auto;
+}
+
+.florencia-footer .copyright-text {
+  border-top: 1px solid #e4cbdd;
+  padding-top: 10px;
+}
+.florencia-footer .social-links svg {
+  width: 20px;
+  height: auto;
+  max-height: 20px;
+}
+
+.florencia-footer .input-group {
+  max-width: 600px;
+  border-radius: 6px;
+  border: 1px solid #3c1053;
+  background: #fff;
+  height: 45px;
+}
+.florencia-footer .input-group input {
+  border: none;
+  box-shadow: none !important;
+}
+
+.florencia-footer .input-group .btn {
+  border: none;
+  color: #3c1053;
+  background-color: #fff !important;
+  font-weight: 600;
+}
+
+.florencia-footer .input-group input::placeholder {
+  color: #a5a5a5;
+}
+.footer-link {
+  text-decoration: none;
+  color: #3c1053;
+  text-transform: uppercase;
+}

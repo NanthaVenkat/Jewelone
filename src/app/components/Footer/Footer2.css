@@ -1,0 +1,124 @@
+
+.footer-section {
+    background: #9f212c;
+    color: #fff;
+  }
+  .footer-section_text {
+    color: #fff;
+    font-family: var(--font-inter);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 18.2px */
+  }
+  .footer-section img{
+    max-width: 100%;
+    height: auto;
+  }
+  .footer-section_links_label {
+    color: #f7c676;
+    font-family: var(--font-inter);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+  }
+  .footer-section ul li {
+    color: #fff;
+    font-family: var(--font-inter);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 205%; /* 24.6px */
+  }
+
+  .footer-section_items {
+    display: grid;
+    grid-template-columns:  1fr;
+    gap: 20px;
+  }
+  
+ @media(min-width:450px){
+  .footer-section_items {
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    gap: 20px;
+  }
+  
+ }
+  .footer-social-links {
+    display: flex;
+  }
+  .footer-social-links li a {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    /* margin:0 5px; */
+  }
+  .footer-social-links li svg {
+    width: 20px;
+    height: 20px
+  }
+  
+  .newsletter-form-input-group {
+    border-radius: 8.728px;
+    border: 0.97px solid #d49950;
+    padding: 5px;
+  }
+  
+  .newsletter-form-input-group input {
+    color: #c0676f !important;
+    font-family: var(--font-inter);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 25.2px */
+    box-shadow: none !important;
+    outline: none;
+    border: none;
+  }
+  .newsletter-form-input-group input::placeholder {
+    color: #c0676f !important;
+    font-family: var(--font-inter);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 25.2px */
+  }
+  @media (min-width: 992px) {
+    .footer-section_text {
+      color: #fff;
+      font-family: var(--font-inter);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 28px */
+    }
+  
+    .footer-section_links_label {
+      color: #f7c676;
+      font-family: var(--font-inter);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 30.8px */
+    }
+    .footer-section ul li {
+      color: #fff;
+      font-family: var(--font-inter);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 247.5%; /* 49.5px */
+    }
+  }
+  
+
+
+  .footer-section_items a{
+    text-decoration: none;
+    color: #fff;
+  }

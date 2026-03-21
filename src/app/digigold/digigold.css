@@ -1,0 +1,70 @@
+
+
+.digi-gold {
+  background-color: #F2EDE4;
+}
+
+.line-below-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #C49966;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.digigold-benefits-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+
+}
+
+@media (min-width: 1024px) {
+  .digigold-benefits-title::after {
+    margin: 0;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .digigold-section1 img {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+@media (min-width: 650px) {
+  .digigold-section1 img {
+    aspect-ratio: 96 / 47;
+  }
+}
+.section5-title-line{
+  width: 100%;
+  height: 2px;
+  background-color: #C49966;
+  border-radius: 10px;
+}
+
+.section5-line::after{
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #C49966;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+  .section5-line::after {
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+}

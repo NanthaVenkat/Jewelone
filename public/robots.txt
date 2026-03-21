@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://jewelone.in
+
+# Sitemaps
+Sitemap: https://jewelone.in/sitemap.xml

@@ -1,0 +1,181 @@
+
+.stores-section1 img{
+    width: 100%;
+    min-height: 339px;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.stores-section1_wrapper{
+    max-width: 576px;
+    margin: auto;
+    padding: 10px;
+}
+.stores-section1_title{
+    color: #FFF;
+    text-align: center;
+    font-family: var(--font-inter);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 39px */
+}
+.stores-section1_text{
+    color: #FFF;
+    text-align: center;
+    font-family: var(--font-inter);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 133%; /* 21.28px */
+}
+.stores-section1 button{
+    color: #A0222C;
+}
+@media (min-width:768px) {
+    .stores-section1_title{
+        color: #FFF;
+        text-align: center;
+        font-family: var(--font-inter);
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%; /* 46.8px */
+    }
+    .stores-section1_text{
+        color: #FFF;
+    text-align: center;
+    font-family: var(--font-inter);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 133%; /* 26.6px */
+    } 
+}
+/* .stores-section1-item{
+    left: 50%;
+    transform: translate(-50%);
+} */
+
+
+
+
+.stores-section2 .card{
+    border-radius: 18px;
+    border: 1px solid #E4E4E4;
+    background: #FFF;
+}
+.stores-section2_card-title{
+    color: #282828;
+    font-family: var(--font-inter);
+    font-size: 16.276px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 21.159px */
+}
+.stores-section2_card-text{
+    color: #747474;
+    font-family: var(--font-inter);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 138%; /* 16.56px */
+}
+.stores-section2_card-red-text-bold{
+    color: #A0222C;
+    font-family: var(--font-inter);
+    font-size: 12.241px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 15.914px */
+}
+.stores-section2_card-red-text-light{
+    color: #A0222C;
+    font-family: var(--font-inter);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 138%; /* 16.56px */
+}
+.stores-section2_card-yellow-text{
+    color: #FA0;
+    font-family: var(--font-inter);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 138%;
+}
+
+.card.store-card{
+    height: 100%;
+}
+.stores-section2 .card{
+    height: 100%;
+    overflow: hidden;
+}
+.stores-section2_title{
+    color: #282828;
+    text-align: center;
+    font-family: var(--font-inter);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 52px */
+}
+
+@media (min-width:992px) {
+    .stores-section2_title{
+        color: #282828;
+        text-align: center;
+        font-family: var(--font-inter);
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%; /* 52px */
+    }
+    .stores-section2_card-title{
+        color: #282828;
+    font-family: var(--font-inter);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 31.2px */
+    }
+    .stores-section2_card-text{
+        color: #747474;
+        font-family: var(--font-inter);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 138%; /* 22.08px */
+    }
+    .stores-section2_card-red-text-bold{
+        color: #A0222C;
+        font-family: var(--font-inter);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 130%; /* 23.4px */
+    }
+    .stores-section2_card-red-text-light{
+        color: #A0222C;
+        font-family: var(--font-inter);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 138%; /* 22.08px */
+    }
+    .stores-section2_card-yellow-text{
+        color: #FA0;
+    font-family: var(--font-inter);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 138%;
+    }
+}
+
+.store-card img{
+    aspect-ratio: 2;
+    object-fit: cover;
+}

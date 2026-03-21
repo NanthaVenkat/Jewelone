@@ -1,0 +1,45 @@
+.privacy-policy{
+    font-family: var(--font-inter);
+}
+.privacy-policy h2{
+    color: #A0222C;
+    position: relative;
+    margin-bottom: 30px;
+
+}
+
+.privacy-policy h2:after{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background-color: #ECBE62;
+    bottom: -10px;
+    left: 0;
+}
+
+.privacy-policy h3,.privacy-policy h4{
+    color: #C79144;
+    margin-bottom: 20px;
+
+}
+
+.privacy-policy p{
+    color: #6D6D6D;
+
+}
+
+.privacy-policy a{
+    color: #A0222C;
+
+}
+
+.privacy-policy .tab-content ul li::marker {
+    color: #C79144;
+
+ 
+  }
+
+  .privacy-policy .tab-content ul li strong{
+    color: #2D2D2D;
+  }
