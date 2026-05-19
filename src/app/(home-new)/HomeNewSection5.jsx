@@ -12,21 +12,21 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HomeNewSection5 = () => {
-  const section5Slider = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
 
   const handlePrev = useCallback(() => {
-    if (!section5Slider.current) return;
-    section5Slider.current.swiper.slidePrev();
-  }, []);
+    if (!swiperInstance) return;
+    swiperInstance.slidePrev();
+  }, [swiperInstance]);
 
   const handleNext = useCallback(() => {
-    if (!section5Slider.current) return;
-    section5Slider.current.swiper.slideNext();
-  }, []);
+    if (!swiperInstance) return;
+    swiperInstance.slideNext();
+  }, [swiperInstance]);
   return (
     <section className="HomeNewSection5 tw:relative">
       <Swiper
-        ref={section5Slider}
+        onSwiper={setSwiperInstance}
         loop={true}
         autoHeight={true}
         autoplay={{
@@ -97,7 +97,7 @@ const HomeNewSection5 = () => {
       <div>
         <div className="swiper-arrows">
           <button
-            className="prev-arrow tw:absolute tw:top-1/2 tw:-translate-y-1/2 tw:left-1 tw:z-1 tw:cursor-auto tw:border tw:border-black tw:bg-black tw:text-white tw:disabled:text-gray-400 tw:disabled:bg-white tw:!rounded-sm"
+            className="prev-arrow tw:absolute tw:top-1/2 tw:-translate-y-1/2 tw:left-1 tw:z-10 tw:cursor-pointer tw:border tw:border-black tw:bg-black tw:text-white tw:disabled:text-gray-400 tw:disabled:bg-white tw:!rounded-sm"
             onClick={handlePrev}
           >
             <svg
@@ -115,7 +115,7 @@ const HomeNewSection5 = () => {
           </button>
 
           <button
-            className="next-arrow tw:absolute tw:top-1/2 tw:-translate-y-1/2 tw:right-1 tw:z-1 tw:cursor-auto tw:border tw:border-black tw:bg-black tw:text-white tw:disabled:text-gray-400 tw:disabled:bg-white tw:!rounded-sm"
+            className="next-arrow tw:absolute tw:top-1/2 tw:-translate-y-1/2 tw:right-1 tw:z-10 tw:cursor-pointer tw:border tw:border-black tw:bg-black tw:text-white tw:disabled:text-gray-400 tw:disabled:bg-white tw:!rounded-sm"
             onClick={handleNext}
           >
             <svg

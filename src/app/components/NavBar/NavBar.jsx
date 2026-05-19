@@ -31,6 +31,9 @@ const Navbar = ({ logo }) => {
               <Link className="tw:!text-black copperplate-font tw:!no-underline tw:uppercase tw:text-sm tw:font-medium" href="/careers">
                 Careers
               </Link>
+              <Link className="tw:!text-black copperplate-font tw:!no-underline tw:uppercase tw:text-sm tw:font-medium" href="/blog">
+                Blog
+              </Link>
               <Link className="tw:!text-black copperplate-font tw:!no-underline tw:uppercase tw:text-sm tw:font-medium" href="/contact-us">
                 Contact Us
               </Link>
@@ -114,6 +117,10 @@ const Navbar = ({ logo }) => {
 
           <Link onClick={handleClose} href="/careers" className="tw:!text-black tw:text-sm tw:uppercase tw:!no-underline tw:pb-4">
             Careers
+          </Link>
+
+          <Link onClick={handleClose} href="/blog" className="tw:!text-black tw:text-sm tw:uppercase tw:!no-underline tw:pb-4">
+            Blog
           </Link>
 
           <div className="tw:pb-4">

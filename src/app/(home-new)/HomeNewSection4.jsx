@@ -12,17 +12,17 @@ import "./home-new.css";
 import Image from "next/image";
 
 const HomeNewSection4 = () => {
-  const sliderRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
 
   const handlePrev = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slidePrev();
-  }, []);
+    if (!swiperInstance) return;
+    swiperInstance.slidePrev();
+  }, [swiperInstance]);
 
   const handleNext = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slideNext();
-  }, []);
+    if (!swiperInstance) return;
+    swiperInstance.slideNext();
+  }, [swiperInstance]);
   return (
     <div className="tw:px-4 tw:md:px-10 tw:lg:px-16 tw:py-10 tw:lg:py-16 HomeNewSection4">
       <div className="tw:grid tw:grid-cols-1 tw:lg:grid-cols-[35%_65%] tw:gap-10">
@@ -45,7 +45,7 @@ const HomeNewSection4 = () => {
 
           <div className="tw:mt-10">
             <Swiper
-              ref={sliderRef}
+              onSwiper={setSwiperInstance}
               slidesPerView={2}
               loop={true}
               spaceBetween={10}

@@ -117,6 +117,33 @@ const page = async () => {
           </Link>
         )}
 
+        {/* Blogs Widget - SuperAdmin Only */}
+        {isSuperAdmin && (
+          <Link href="/dashboard/blogs" className="tw:block tw:no-underline tw:group">
+            <div className="tw:bg-white tw:rounded-2xl tw:p-8 tw:shadow-sm tw:border tw:border-gray-100 tw:transition-all tw:duration-300 group-hover:tw:shadow-xl group-hover:tw:border-purple-100 group-hover:-tw:translate-y-1 tw:relative tw:overflow-hidden">
+              <div className="tw:absolute tw:top-0 tw:right-0 tw:w-32 tw:h-32 tw:bg-purple-50 tw:rounded-full tw:-mr-16 tw:-mt-16 tw:transition-transform group-hover:tw:scale-150"></div>
+
+              <div className="tw:relative tw:z-10">
+                <div className="tw:w-12 tw:h-12 tw:bg-purple-50 tw:text-purple-700 tw:rounded-xl tw:flex tw:items-center tw:justify-center tw:mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="tw:size-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                  </svg>
+                </div>
+
+                <h3 className="tw:text-2xl tw:font-medium tw:text-gray-900 tw:mb-2">Blogs</h3>
+                <p className="tw:text-gray-500 tw:mb-6 tw:line-clamp-2">Create, edit, and manage dynamic blog posts for the website.</p>
+
+                <span className="tw:inline-flex tw:items-center tw:text-purple-700 tw:font-medium tw:border-b-2 tw:border-transparent group-hover:tw:border-purple-700 tw:transition-colors">
+                  Manage Blogs
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="tw:size-4 tw:ml-2 group-hover:tw:translate-x-1 tw:transition-transform">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </Link>
+        )}
+
       </div>
     </div>
   )

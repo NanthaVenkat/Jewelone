@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -9,17 +9,17 @@ import Image from "next/image";
 import CollectionModal from "./CollectionModal";
 
 const ZillaraSection5 = () => {
-  const sliderRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
 
   const handlePrev = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slidePrev();
-  }, []);
+    if (!swiperInstance) return;
+    swiperInstance.slidePrev();
+  }, [swiperInstance]);
 
   const handleNext = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slideNext();
-  }, []);
+    if (!swiperInstance) return;
+    swiperInstance.slideNext();
+  }, [swiperInstance]);
 
   const items = [
     {
@@ -1527,7 +1527,7 @@ const ZillaraSection5 = () => {
           <div className="container-fluid py-5">
             <div className="col-12">
               <Swiper
-                ref={sliderRef}
+                onSwiper={setSwiperInstance}
                 slidesPerView={1.2}
                 centeredSlides={true}
                 spaceBetween={10}

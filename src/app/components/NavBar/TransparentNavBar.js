@@ -179,6 +179,20 @@ const TransparentNavBar = ({ logo, stickyLogo }) => {
 
             <li className="nav-item">
               <Link
+                href="/blog"
+                className={
+                  currentRoute === "/blog"
+                    ? "active main-menu-link nav-link"
+                    : "main-menu-link nav-link"
+                }
+                onClick={handleClose}
+              >
+                Blog
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link
                 href="/contact-us"
                 className={
                   currentRoute === "/contact-us"
@@ -232,6 +246,20 @@ const TransparentNavBar = ({ logo, stickyLogo }) => {
                   >
                     Stores
                   </a>
+                </li>
+
+                <li className="nav-item">
+                  <Link
+                    href="/blog"
+                    className={
+                      currentRoute === "/blog"
+                        ? "active main-menu-link nav-link"
+                        : "main-menu-link nav-link"
+                    }
+                    onClick={handleClose}
+                  >
+                    Blog
+                  </Link>
                 </li>
 
                 <li className="nav-item">

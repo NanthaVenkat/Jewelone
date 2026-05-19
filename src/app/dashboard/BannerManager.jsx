@@ -6,6 +6,7 @@ import Image from "next/image";
 const BannerManager = () => {
     const [banners, setBanners] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [mounted, setMounted] = useState(false);
 
     // Form State
     const [desktopImg, setDesktopImg] = useState(null);
@@ -18,7 +19,7 @@ const BannerManager = () => {
     const fetchBanners = async () => {
         setLoading(true);
         try {
-            const res = await fetch("/api/banner");
+            const res = await fetch("/api/banner", { cache: "no-store" });
             const data = await res.json();
             setBanners(data);
         } catch (error) {
@@ -29,14 +30,13 @@ const BannerManager = () => {
     };
 
     useEffect(() => {
+        setMounted(true);
         fetchBanners();
     }, []);
 
-    const handleFileChange = (e, setFile) => {
-        if (e.target.files && e.target.files[0]) {
-            setFile(e.target.files[0]);
-        }
-    };
+    if (!mounted) {
+        return <div className="tw:py-10 tw:text-center">Loading Data...</div>;
+    }
 
     const handleEdit = (banner) => {
         setEditingId(banner._id);
@@ -78,10 +78,7 @@ const BannerManager = () => {
         const formData = new FormData();
         if (desktopImg) formData.append("desktopImg", desktopImg);
         if (mobileImg) formData.append("mobileImg", mobileImg);
-
-        if (editingId) {
-            formData.append("id", editingId);
-        }
+        if (editingId) formData.append("id", editingId);
 
         try {
             const url = "/api/banner";
@@ -198,7 +195,7 @@ const BannerManager = () => {
                                         id="desktopInput"
                                         type="file"
                                         accept="image/*"
-                                        onChange={(e) => handleFileChange(e, setDesktopImg)}
+                                        onChange={(e) => setDesktopImg(e.target.files && e.target.files[0] ? e.target.files[0] : null)}
                                         className="tw:block tw:w-full tw:text-sm tw:text-gray-500 file:tw:mr-4 file:tw:py-2.5 file:tw:px-4 file:tw:rounded-full file:tw:border-0 file:tw:text-sm file:tw:font-semibold file:tw:bg-gray-50 file:tw:text-gray-700 hover:file:tw:bg-gray-100 tw:cursor-pointer"
                                     />
                                 </div>
@@ -213,7 +210,7 @@ const BannerManager = () => {
                                         id="mobileInput"
                                         type="file"
                                         accept="image/*"
-                                        onChange={(e) => handleFileChange(e, setMobileImg)}
+                                        onChange={(e) => setMobileImg(e.target.files && e.target.files[0] ? e.target.files[0] : null)}
                                         className="tw:block tw:w-full tw:text-sm tw:text-gray-500 file:tw:mr-4 file:tw:py-2.5 file:tw:px-4 file:tw:rounded-full file:tw:border-0 file:tw:text-sm file:tw:font-semibold file:tw:bg-gray-50 file:tw:text-gray-700 hover:file:tw:bg-gray-100 tw:cursor-pointer"
                                     />
                                 </div>
@@ -332,6 +329,7 @@ const BannerManager = () => {
                                                     alt="Desktop Banner"
                                                     fill
                                                     className="tw:object-cover"
+                                                    unoptimized
                                                 />
                                             </div>
                                         </div>
@@ -343,6 +341,7 @@ const BannerManager = () => {
                                                     alt="Mobile Banner"
                                                     fill
                                                     className="tw:object-cover"
+                                                    unoptimized
                                                 />
                                             </div>
                                         </div>

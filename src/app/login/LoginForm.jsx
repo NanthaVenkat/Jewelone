@@ -35,7 +35,8 @@ const LoginForm = () => {
       }
 
       // Redirect after login
-      router.push("/dashboard");
+      // Force a hard navigation to bypass Next.js client-side cache of middleware redirects
+      window.location.href = "/dashboard";
 
     } catch (error) {
       console.error("Login error:", error);

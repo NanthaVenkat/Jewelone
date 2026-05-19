@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
-import path from 'path';
-import fs from 'fs/promises';
 import dbConnect from '@/lib/db';
 import Banner from '@/models/Banner';
+import path from 'path';
+import { mkdir, writeFile } from 'fs/promises';
 
-// Local uploads directory (public/uploads/banners)
-const UPLOADS_DIR = path.join(process.cwd(), 'public', 'uploads', 'banners');
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 // GET: Fetch all banners
 export async function GET() {
@@ -30,22 +30,18 @@ export async function POST(request) {
             return NextResponse.json({ message: "Both Desktop and Mobile images are required" }, { status: 400 });
         }
 
-        // Ensure uploads directory exists
-        await fs.mkdir(UPLOADS_DIR, { recursive: true });
+        const saveFile = async (file) => {
+            if (typeof file === 'string') {
+                return file;
+            }
 
-        // Helper to save file
-        const saveFile = async (file, prefix) => {
             const buffer = Buffer.from(await file.arrayBuffer());
-            const fileExt = path.extname(file.name);
-            const safeName = path.basename(file.name, fileExt).replace(/[^a-zA-Z0-9]/g, "_");
-            const fileName = `${prefix}_${safeName}_${Date.now()}${fileExt}`;
-            const filePath = path.join(UPLOADS_DIR, fileName);
-            await fs.writeFile(filePath, buffer);
-            return `/uploads/banners/${fileName}`;
+            const mimeType = file.type || 'image/jpeg';
+            return `data:${mimeType};base64,${buffer.toString('base64')}`;
         };
 
-        const desktopPath = await saveFile(desktopImg, 'desktop');
-        const mobilePath = await saveFile(mobileImg, 'mobile');
+        const desktopPath = await saveFile(desktopImg);
+        const mobilePath = await saveFile(mobileImg);
 
         await dbConnect();
 
@@ -53,11 +49,7 @@ export async function POST(request) {
         const lastBanner = await Banner.findOne().sort({ order: -1 });
         const newOrder = lastBanner && lastBanner.order !== undefined ? lastBanner.order + 1 : 0;
 
-        const newBanner = await Banner.create({
-            desktopImg: desktopPath,
-            mobileImg: mobilePath,
-            order: newOrder
-        });
+        const newBanner = await Banner.create({ desktopImg: desktopPath, mobileImg: mobilePath, order: newOrder });
 
         return NextResponse.json({ success: true, banner: newBanner });
 
@@ -112,39 +104,24 @@ export async function PUT(request) {
             return NextResponse.json({ message: "Banner not found" }, { status: 404 });
         }
 
-        // Helper to save file (Same as POST)
-        const saveFile = async (file, prefix) => {
-            await fs.mkdir(UPLOADS_DIR, { recursive: true });
-            const buffer = Buffer.from(await file.arrayBuffer());
-            const fileExt = path.extname(file.name);
-            const safeName = path.basename(file.name, fileExt).replace(/[^a-zA-Z0-9]/g, "_");
-            const fileName = `${prefix}_${safeName}_${Date.now()}${fileExt}`;
-            const filePath = path.join(UPLOADS_DIR, fileName);
-            await fs.writeFile(filePath, buffer);
-            return `/uploads/banners/${fileName}`;
-        };
-
-        // Helper to delete old file
-        const deleteFile = async (webPath) => {
-            try {
-                if (!webPath) return;
-                const filePath = path.join(process.cwd(), 'public', webPath);
-                await fs.unlink(filePath);
-            } catch (e) {
-                console.warn(`Failed to delete old file: ${webPath}`);
+        const saveFile = async (file) => {
+            if (typeof file === 'string') {
+                return file;
             }
+
+            const buffer = Buffer.from(await file.arrayBuffer());
+            const mimeType = file.type || 'image/jpeg';
+            return `data:${mimeType};base64,${buffer.toString('base64')}`;
         };
 
         const updateData = {};
 
         if (desktopImg && desktopImg instanceof File) {
-            await deleteFile(banner.desktopImg);
-            updateData.desktopImg = await saveFile(desktopImg, 'desktop');
+            updateData.desktopImg = await saveFile(desktopImg);
         }
 
         if (mobileImg && mobileImg instanceof File) {
-            await deleteFile(banner.mobileImg);
-            updateData.mobileImg = await saveFile(mobileImg, 'mobile');
+            updateData.mobileImg = await saveFile(mobileImg);
         }
 
         const updatedBanner = await Banner.findByIdAndUpdate(id, { $set: updateData }, { new: true });
@@ -174,19 +151,7 @@ export async function DELETE(request) {
             return NextResponse.json({ message: "Banner not found" }, { status: 404 });
         }
 
-        // Attempt to delete files
-        const deleteFile = async (webPath) => {
-            try {
-                const filePath = path.join(process.cwd(), 'public', webPath);
-                await fs.unlink(filePath);
-            } catch (e) {
-                console.warn(`Failed to delete file: ${webPath}`, e.message);
-            }
-        };
-
-        await deleteFile(banner.desktopImg);
-        await deleteFile(banner.mobileImg);
-
+        // Only URLs are stored
         await Banner.findByIdAndDelete(id);
 
         return NextResponse.json({ success: true, message: "Banner deleted successfully" });
