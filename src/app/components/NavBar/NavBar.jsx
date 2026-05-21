@@ -46,6 +46,15 @@ const Navbar = ({ logo }) => {
     { label: "Contact Us", href: "/contact-us" },
   ];
 
+  const ourBrands = [
+    {
+      label: 'Our Brands', submenu: [
+        { label: 'Zilara', href: '/zilara' },
+        { label: 'Florencia', href: '/florencia' }
+      ]
+    }
+  ]
+
   return (
     <header className="tw:bg-white tw:shadow tw:sticky tw:top-0 tw:z-[9999]">
       <nav className="tw:px-4 tw:md:px-10 tw:lg:px-16 tw:py-2.5">
@@ -99,15 +108,47 @@ const Navbar = ({ logo }) => {
             </div>
 
             <div className="tw:flex tw:gap-4 tw:items-center">
-              <div className="copperplate-font tw:text-sm tw:uppercase">our brands</div>
+              {/* <div className="copperplate-font tw:text-sm tw:uppercase">our brands</div> */}
 
-              <Link className="tw:!text-black tw:border tw:border-black px-4 tw:py-2 tw:rounded-sm tw:hover:bg-[#964A26] tw:hover:border-[#964A26] tw:hover:!text-white copperplate-font tw:!no-underline tw:uppercase tw:text-sm tw:font-medium" href="/zilara">
-                Zilara
-              </Link>
+              {ourBrands.map((menuItem, index) => (
+                <div key={index} className="tw:relative">
+                  {/* Main Menu */}
+                  {menuItem.submenu ? (
+                    <button
+                      onClick={() => setOpenSubmenuIndex(openSubmenuIndex === index ? null : index)}
+                      className="copperplate-font tw:text-sm tw:!uppercase tw:border tw:!rounded-sm tw:px-4 tw:py-2"
+                    >
+                      {menuItem.label}
 
-              <Link className="tw:!text-black tw:border tw:border-black px-4 tw:py-2 tw:rounded-sm tw:hover:bg-[#AD5389] tw:hover:border-[#AD5389] tw:hover:!text-white copperplate-font tw:!no-underline tw:uppercase tw:text-sm tw:font-medium" href="/florencia">
-                Florencia
-              </Link>
+                      <span className="tw:ml-2">
+                        {openSubmenuIndex === index ? "▲" : "▼"}
+                      </span>
+                    </button>
+                  ) : (
+                    <Link
+                      href={menuItem.href || "#"}
+                      className="tw:!text-black copperplate-font tw:!no-underline tw:uppercase tw:text-sm tw:font-medium"
+                    >
+                      {menuItem.label}
+                    </Link>
+                  )}
+
+                  {/* Submenu */}
+                  {menuItem.submenu && openSubmenuIndex === index && (
+                    <div className="tw:absolute tw:left-0 tw:top-[120%] tw:min-w-[240px] tw:rounded-xl tw:bg-black tw:p-4 tw:text-white tw:shadow-xl tw:z-50">
+                      {menuItem.submenu.map((item, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          href={item.href}
+                          className="tw:block tw:py-2 tw:!text-white tw:!no-underline hover:tw:text-orange-400"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
 
               <Link href="/stores">
                 <Image className="tw:size-6" src="/icons/store.svg" width={32} height={32} alt="stores" />
