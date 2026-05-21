@@ -12,19 +12,39 @@ const Navbar = ({ logo }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const menuItems = [
-    { label: 'SS - Gold Scheme', href: '/swarna-sakthi' },
-    { label: 'Digi Gold', href: '/digigold' },
-    { label: 'Careers', href: '/careers' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Contact Us', href: '/contact-us' },
-    { label: 'Reviews', href: '/testimonials' },
-    { label: 'Stores', href: '/stores' },
-    { label: 'Certifications', href: '/our-certifications-policies' }
-  ];
+  const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
 
-  const visibleMenus = menuItems.slice(0, 4);
-  const hiddenMenus = menuItems.slice(4);
+  const menuItems = [
+    // Home
+    { label: "Home", href: "/" },
+
+    // Our Schemes
+    {
+      label: "Our Schemes",
+      href: "#",
+      submenu: [
+        { label: "SS - Gold Scheme", href: "/swarna-sakthi" },
+        { label: "Digi Gold", href: "/digigold" },
+      ],
+    },
+
+    // About
+    {
+      label: "About",
+      href: "#",
+      submenu: [
+        { label: "About Us", href: "/about-us" },
+        { label: "Careers", href: "/careers" },
+        { label: "Blog", href: "/blog" },
+        { label: "Stores", href: "/stores" },
+        { label: "Certifications", href: "/our-certifications-policies" },
+        { label: "Reviews", href: "/testimonials" },
+      ],
+    },
+
+    // Contact us
+    { label: "Contact Us", href: "/contact-us" },
+  ];
 
   return (
     <header className="tw:bg-white tw:shadow tw:sticky tw:top-0 tw:z-[9999]">
@@ -36,48 +56,46 @@ const Navbar = ({ logo }) => {
               <RenderLogo logo={logo} />
             </div>
 
-            <div className="tw:flex tw:flex-wrap tw:gap-6 tw:items-center">
-              {visibleMenus.map((menuItem, index) => (
-                <Link key={index} className="tw:!text-black copperplate-font tw:!no-underline tw:uppercase tw:text-sm tw:font-medium" href={menuItem.href} >
-                  {menuItem.label}
-                </Link>
-              ))}
+            <div className="tw:flex tw:flex-wrap tw:items-center tw:gap-6">
+              {menuItems.map((menuItem, index) => (
+                <div key={index} className="tw:relative">
+                  {/* Main Menu */}
+                  {menuItem.submenu ? (
+                    <button
+                      onClick={() => setOpenSubmenuIndex(openSubmenuIndex === index ? null : index)}
+                      className="tw:flex tw:gap-0 tw:!text-black copperplate-font tw:!no-underline tw:uppercase tw:text-sm tw:font-medium"
+                    >
+                      {menuItem.label}
 
-              {hiddenMenus.length > 0 && (
-                <div className="tw:relative">
-                  <button
-                    onClick={() => setShowMore(!showMore)}
-                    className="copperplate-font tw:text-sm tw:font-medium tw:uppercase hover:tw:text-gray-600 focus:tw:outline-none"
-                  >
-                    {Array.from({ length: 3 }).map((_, i) => (
-                      <span
-                        key={i}
-                        className="tw:rounded-full tw:bg-black tw:inline-block tw:w-1.5 tw:h-1.5 tw:mx-0.5"
-                      ></span>
-                    ))}
-                  </button>
+                      <span className="tw:ml-2">
+                        {openSubmenuIndex === index ? "▲" : "▼"}
+                      </span>
+                    </button>
+                  ) : (
+                    <Link
+                      href={menuItem.href || "#"}
+                      className="tw:!text-black copperplate-font tw:!no-underline tw:uppercase tw:text-sm tw:font-medium"
+                    >
+                      {menuItem.label}
+                    </Link>
+                  )}
 
-                  {showMore && (
-                    <>
-                      {/* Backdrop to close the dropdown when clicking outside */}
-                      <div className="tw:fixed tw:inset-0 tw:z-40" onClick={() => setShowMore(false)} />
-
-                      <div className="tw:absolute tw:right-0 tw:top-full tw:mt-2 tw:w-[180px] tw:bg-[#1A1A1A] tw:rounded-md tw:py-3 tw:shadow-xl tw:z-50">
-                        {hiddenMenus.map((item, index) => (
-                          <Link
-                            key={index}
-                            href={item.href}
-                            onClick={() => setShowMore(false)}
-                            className="tw:block tw:px-5 tw:py-2 tw:text-sm tw:!text-white tw:!no-underline hover:tw:bg-white/10 copperplate-font tw:uppercase"
-                          >
-                            {item.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </>
+                  {/* Submenu */}
+                  {menuItem.submenu && openSubmenuIndex === index && (
+                    <div className="tw:absolute tw:left-0 tw:top-[150%] tw:min-w-[240px] tw:rounded-xl tw:bg-black tw:p-4 tw:text-white tw:shadow-xl tw:z-50">
+                      {menuItem.submenu.map((item, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          href={item.href}
+                          className="tw:block tw:py-2 tw:!text-white tw:!no-underline hover:tw:text-orange-400"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
                   )}
                 </div>
-              )}
+              ))}
             </div>
 
             <div className="tw:flex tw:gap-4 tw:items-center">
@@ -128,22 +146,56 @@ const Navbar = ({ logo }) => {
       {/* Sidebar */}
       <div className={`tw:fixed tw:top-0 tw:left-0 tw:h-full tw:w-full tw:max-w-sm tw:bg-white tw:z-50 tw:shadow-lg tw:transform tw:transition-transform tw:duration-300 ${show ? "tw:translate-x-0" : "tw:-translate-x-full"}`}>
         {/* Header */}
-        <div className="tw:flex tw:justify-center tw:items-center tw:p-4 tw:border-b tw:border-gray-300">
-          <RenderLogo logo={logo} />
+        <div className="tw:relative tw:flex tw:justify-center tw:items-center tw:p-4 tw:border-b tw:border-gray-300">
           <button onClick={handleClose} className="tw:absolute tw:left-4">
             <Image className="tw:size-4" src="/icons/close.svg" width={24} height={24} alt="close" />
           </button>
+          <RenderLogo logo={logo} />
         </div>
 
         {/* Mobile Sidebar Menu Items */}
         <div className="tw:flex tw:flex-col tw:gap-4 tw:p-4 tw:divide-y tw:divide-gray-200">
           {menuItems.map((menuItem, index) => (
-            <Link key={index} onClick={handleClose} className="tw:!text-black tw:text-sm tw:uppercase tw:!no-underline tw:pb-4" href={menuItem.href}>
-              {menuItem.label}
-            </Link>
+            <div key={index}>
+              {menuItem.submenu ? (
+                <>
+                  <button
+                    onClick={() => setOpenSubmenuIndex(openSubmenuIndex === index ? null : index)}
+                    className="tw:!text-black tw:text-sm tw:uppercase tw:!no-underline tw:pb-4 tw:w-full tw:text-left copperplate-font"
+                  >
+                    {menuItem.label}
+                    <span className="tw:ml-2">
+                      {openSubmenuIndex === index ? "▲" : "▼"}
+                    </span>
+                  </button>
+                  {openSubmenuIndex === index && (
+                    <div className="tw:ml-4 tw:mt-2 tw:space-y-2">
+                      {menuItem.submenu.map((item, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          onClick={handleClose}
+                          href={item.href}
+                          className="tw:!text-black tw:text-sm tw:uppercase tw:!no-underline tw:block tw:pb-2"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  onClick={handleClose}
+                  className="tw:!text-black tw:text-sm tw:uppercase tw:!no-underline tw:pb-4 tw:block"
+                  href={menuItem.href}
+                >
+                  {menuItem.label}
+                </Link>
+              )}
+            </div>
           ))}
 
-          <div className="tw:pb-4">
+          <div className="tw:pt-4">
             <div className="tw:text-sm tw:uppercase tw:font-medium tw:text-[#964A26] tw:pb-4">
               Our Brands
             </div>
@@ -160,7 +212,7 @@ const Navbar = ({ logo }) => {
           </div>
         </div>
       </div>
-    </header >
+    </header>
   );
 };
 
