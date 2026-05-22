@@ -96,7 +96,7 @@ const Navbar = ({ logo }) => {
                         <Link
                           key={subIndex}
                           href={item.href}
-                          className="tw:block tw:py-2 tw:px-2 tw:rounded-sm tw:!text-[#3B4443] tw:hover:!text-white tw:hover:bg-[#964A26] tw:transition-all tw:!no-underline hover:tw:text-orange-400"
+                          className="tw:block tw:py-2 tw:px-2 tw:rounded-sm tw:!text-[#3B4443] tw:hover:!text-white tw:hover:bg-[#964A26] tw:transition-all tw:!no-underline hover:tw:text-orange-400 copperplate-font"
                         >
                           {item.label}
                         </Link>
@@ -137,7 +137,7 @@ const Navbar = ({ logo }) => {
                         <Link
                           key={subIndex}
                           href={item.href}
-                          className="tw:block tw:py-2 tw:px-2 tw:rounded-sm tw:!text-[#3B4443] tw:hover:!text-white tw:hover:bg-[#964A26] tw:!no-underline hover:tw:text-orange-400"
+                          className="tw:block tw:py-2 tw:px-2 tw:rounded-sm copperplate-font tw:!text-[#3B4443] tw:hover:!text-white tw:hover:bg-[#964A26] tw:!no-underline hover:tw:text-orange-400"
                         >
                           {item.label}
                         </Link>
@@ -211,7 +211,7 @@ const Navbar = ({ logo }) => {
                           key={subIndex}
                           onClick={handleClose}
                           href={item.href}
-                          className="tw:!text-black tw:text-sm tw:uppercase tw:!no-underline tw:block tw:pb-2"
+                          className="tw:!text-black copperplate-font tw:text-sm tw:uppercase tw:!no-underline tw:block tw:pb-2"
                         >
                           {item.label}
                         </Link>
@@ -236,12 +236,12 @@ const Navbar = ({ logo }) => {
               Our Brands
             </div>
             <div className="tw:mb-4">
-              <Link onClick={handleClose} href="/zilara" className="tw:!text-black tw:flex tw:items-center tw:gap-2 tw:ms-4 tw:text-sm tw:uppercase tw:!no-underline">
+              <Link onClick={handleClose} href="/zilara" className="tw:!text-black tw:flex copperplate-font tw:items-center tw:gap-2 tw:ms-4 tw:text-sm tw:uppercase tw:!no-underline">
                 <Image src={"/icons/dot.svg"} width={8} height={8} alt="dot" /> <span>Zilara</span>
               </Link>
             </div>
             <div>
-              <Link onClick={handleClose} href="/florencia" className="tw:!text-black tw:flex tw:items-center tw:gap-2 tw:ms-4 tw:text-sm tw:uppercase tw:!no-underline">
+              <Link onClick={handleClose} href="/florencia" className="tw:!text-black tw:flex copperplate-font tw:items-center tw:gap-2 tw:ms-4 tw:text-sm tw:uppercase tw:!no-underline">
                 <Image src={"/icons/dot.svg"} width={8} height={8} alt="dot" /> <span>Florencia</span>
               </Link>
             </div>
