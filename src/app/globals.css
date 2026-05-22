@@ -347,17 +347,17 @@ picture img {
   margin-bottom: 1.5rem !important;
 }
 
-.blog-content span, 
+.blog-content span,
 .blog-content li {
   color: #6d6d6d !important;
   line-height: 1.8 !important;
 }
 
-.blog-content h1, 
-.blog-content h2, 
-.blog-content h3, 
-.blog-content h4, 
-.blog-content h5, 
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
 .blog-content h6 {
   color: #2D2D2D !important;
   font-family: "Alga VF", serif !important;
@@ -391,4 +391,22 @@ picture img {
   text-align: center;
   margin: 2rem auto;
   max-width: 42rem;
+}
+
+[class*='awards'] {
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  border: 2px solid;
+  background: transparent;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 1;
+
+  &[class*='disabled'] {
+    opacity: 0.5;
+  }
 }
