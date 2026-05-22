@@ -18,6 +18,19 @@ const Navbar = ({ logo }) => {
     // Home
     { label: "Home", href: "/" },
 
+    // About
+    {
+      label: "About",
+      href: "#",
+      submenu: [
+        // { label: "About Us", href: "/about-us" },
+        // { label: "Stores", href: "/stores" },
+        { label: "Certifications", href: "/our-certifications-policies" },
+        { label: "Blog", href: "/blog" },
+        { label: "Reviews", href: "/testimonials" },
+      ],
+    },
+
     // Our Schemes
     {
       label: "Our Schemes",
@@ -28,19 +41,8 @@ const Navbar = ({ logo }) => {
       ],
     },
 
-    // About
-    {
-      label: "About",
-      href: "#",
-      submenu: [
-        { label: "About Us", href: "/about-us" },
-        { label: "Careers", href: "/careers" },
-        { label: "Blog", href: "/blog" },
-        { label: "Stores", href: "/stores" },
-        { label: "Certifications", href: "/our-certifications-policies" },
-        { label: "Reviews", href: "/testimonials" },
-      ],
-    },
+    // career
+    { label: "Careers", href: "/careers" },
 
     // Contact us
     { label: "Contact Us", href: "/contact-us" },
@@ -72,13 +74,11 @@ const Navbar = ({ logo }) => {
                   {menuItem.submenu ? (
                     <button
                       onClick={() => setOpenSubmenuIndex(openSubmenuIndex === index ? null : index)}
-                      className="tw:flex tw:gap-0 tw:!text-black copperplate-font tw:!no-underline tw:uppercase tw:text-sm tw:font-medium"
+                      className="tw:flex tw:items-center tw:gap-1 tw:gap-0 tw:!text-black copperplate-font tw:!no-underline tw:uppercase tw:text-sm tw:font-medium"
                     >
                       {menuItem.label}
 
-                      <span className="tw:ml-2">
-                        {openSubmenuIndex === index ? "▲" : "▼"}
-                      </span>
+                      <img src='../../down-arrow.png' width={12} className={`tw:transition-all ${openSubmenuIndex === index ? 'tw:-rotate-180' : 'tw:rotate-0'}`} />
                     </button>
                   ) : (
                     <Link
@@ -91,12 +91,12 @@ const Navbar = ({ logo }) => {
 
                   {/* Submenu */}
                   {menuItem.submenu && openSubmenuIndex === index && (
-                    <div className="tw:absolute tw:left-0 tw:top-[150%] tw:min-w-[240px] tw:rounded-xl tw:bg-black tw:p-4 tw:text-white tw:shadow-xl tw:z-50">
+                    <div className="tw:absolute tw:left-0 tw:top-[150%] tw:min-w-[240px] tw:rounded-xl tw:bg-[#F2EDE4] tw:p-2 tw:text-[#3B4443] tw:shadow-xl tw:z-50">
                       {menuItem.submenu.map((item, subIndex) => (
                         <Link
                           key={subIndex}
                           href={item.href}
-                          className="tw:block tw:py-2 tw:!text-white tw:!no-underline hover:tw:text-orange-400"
+                          className="tw:block tw:py-2 tw:px-2 tw:rounded-sm tw:!text-[#3B4443] tw:hover:!text-white tw:hover:bg-[#964A26] tw:transition-all tw:!no-underline hover:tw:text-orange-400"
                         >
                           {item.label}
                         </Link>
@@ -116,13 +116,10 @@ const Navbar = ({ logo }) => {
                   {menuItem.submenu ? (
                     <button
                       onClick={() => setOpenSubmenuIndex(openSubmenuIndex === index ? null : index)}
-                      className="copperplate-font tw:text-sm tw:!uppercase tw:border tw:!rounded-sm tw:px-4 tw:py-2"
+                      className="copperplate-font tw:flex tw:items-center tw:gap-1 tw:text-sm tw:!uppercase tw:border tw:!rounded-sm tw:px-4 tw:py-2"
                     >
                       {menuItem.label}
-
-                      <span className="tw:ml-2">
-                        {openSubmenuIndex === index ? "▲" : "▼"}
-                      </span>
+                      <img src='../../down-arrow.png' width={12} className={`tw:transition-all ${openSubmenuIndex === index ? 'tw:-rotate-180' : 'tw:rotate-0'}`} />
                     </button>
                   ) : (
                     <Link
@@ -135,12 +132,12 @@ const Navbar = ({ logo }) => {
 
                   {/* Submenu */}
                   {menuItem.submenu && openSubmenuIndex === index && (
-                    <div className="tw:absolute tw:left-0 tw:top-[120%] tw:min-w-[240px] tw:rounded-xl tw:bg-black tw:p-4 tw:text-white tw:shadow-xl tw:z-50">
+                    <div className="tw:absolute tw:left-0 tw:top-[150%] tw:min-w-[240px] tw:rounded-xl tw:bg-[#F2EDE4] tw:p-2 tw:text-[#3B4443] tw:shadow-xl tw:z-50">
                       {menuItem.submenu.map((item, subIndex) => (
                         <Link
                           key={subIndex}
                           href={item.href}
-                          className="tw:block tw:py-2 tw:!text-white tw:!no-underline hover:tw:text-orange-400"
+                          className="tw:block tw:py-2 tw:px-2 tw:rounded-sm tw:!text-[#3B4443] tw:hover:!text-white tw:hover:bg-[#964A26] tw:!no-underline hover:tw:text-orange-400"
                         >
                           {item.label}
                         </Link>
@@ -202,12 +199,10 @@ const Navbar = ({ logo }) => {
                 <>
                   <button
                     onClick={() => setOpenSubmenuIndex(openSubmenuIndex === index ? null : index)}
-                    className="tw:!text-black tw:text-sm tw:uppercase tw:!no-underline tw:pb-4 tw:w-full tw:text-left copperplate-font"
+                    className="tw:!text-black tw:flex tw:items-center tw:gap-2 tw:text-sm tw:uppercase tw:!no-underline tw:pb-4 tw:w-full tw:text-left copperplate-font"
                   >
                     {menuItem.label}
-                    <span className="tw:ml-2">
-                      {openSubmenuIndex === index ? "▲" : "▼"}
-                    </span>
+                    <img src='../../down-arrow.png' width={12} className={`tw:transition-all ${openSubmenuIndex === index ? 'tw:-rotate-180' : 'tw:rotate-0'}`} />
                   </button>
                   {openSubmenuIndex === index && (
                     <div className="tw:ml-4 tw:mt-2 tw:space-y-2">
@@ -236,7 +231,7 @@ const Navbar = ({ logo }) => {
             </div>
           ))}
 
-          <div className="tw:pt-4">
+          <div className="tw:pt-4 tw:pb-4">
             <div className="tw:text-sm tw:uppercase tw:font-medium tw:text-[#964A26] tw:pb-4">
               Our Brands
             </div>
@@ -251,6 +246,14 @@ const Navbar = ({ logo }) => {
               </Link>
             </div>
           </div>
+
+          <Link
+            onClick={handleClose}
+            className="tw:!text-black tw:text-sm tw:uppercase tw:!no-underline tw:pb-4 tw:block"
+            href='/store'
+          >
+            Store
+          </Link>
         </div>
       </div>
     </header>
